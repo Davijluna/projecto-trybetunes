@@ -1,9 +1,11 @@
 import React from 'react';
 
-function Profile() {
-  return (
-    <div data-testid="page-profile" />
-  );
+class Profile extends React.Component {
+  render() {
+    return (
+      <div data-testid="page-profile" />
+    );
+  }
 }
 
 export default Profile;
