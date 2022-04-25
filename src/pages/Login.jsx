@@ -19,6 +19,7 @@ class Login extends React.Component {
 
   // requisito 02.e
   funcnova = (e) => {
+    console.log(e.target);
     this.setState({
       nome: e.target.value,
     });
@@ -70,33 +71,32 @@ class Login extends React.Component {
     const numberMax = 3;
     const { nome, loading } = this.state;
     return (
-      <>
+      <div data-testid="page-login">
         {
-          loading ? <Loading /> : undefined
+          loading ? <Loading /> : (
+            <form>
+              <label htmlFor="name">
+                nome:
+                <input
+                  data-testid="login-name-input"
+                  name="inputNome"
+                  value={ nome }
+                  onChange={ this.funcnova }
+                />
+              </label>
+              <button
+                type="submit"
+                data-testid="login-submit-button"
+                onClick={ this.funcClick }
+                disabled={ nome.length < numberMax }
+              >
+                Entrar
+              </button>
+            </form>
+          )
         }
-        <div data-testid="page-login">
-          <form>
-            <label htmlFor="name">
-              nome:
-              <input
-                data-testid="login-name-input"
-                name="inputNome"
-                value={ nome }
-                onChange={ this.funcnova }
-              />
-            </label>
 
-          </form>
-          <button
-            type="submit"
-            data-testid="login-submit-button"
-            onClick={ this.funcClick }
-            disabled={ nome.length < numberMax }
-          >
-            Entrar
-          </button>
-        </div>
-      </>
+      </div>
     );
   }
 }
