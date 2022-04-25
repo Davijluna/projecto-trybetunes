@@ -27,7 +27,7 @@ class Login extends React.Component {
 
   funcClick = () => {
     const { history } = this.props;
-    console.log(history);
+    // console.log(history);
     this.setState({
       loading: true,
     }, async () => {
