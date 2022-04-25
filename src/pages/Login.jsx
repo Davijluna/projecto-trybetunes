@@ -19,7 +19,7 @@ class Login extends React.Component {
 
   // requisito 02.e
   funcnova = (e) => {
-    console.log(e.target);
+    // console.log(e.target);
     this.setState({
       nome: e.target.value,
     });
