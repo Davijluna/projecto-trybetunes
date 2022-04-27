@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Header from '../Header';
 import getMusics from '../services/musicsAPI';
-// import Loading from './Loading';
 import MusicCard from './MusicCard';
+// import Loading from './Loading';
 
 class Album extends React.Component {
   constructor() {
@@ -34,6 +34,7 @@ class Album extends React.Component {
     return (
       <>
         <Header />
+        <div data-testid="page-album" />
         <h1>Album</h1>
         <div data-testid="page-album">
           <p data-testid="artist-name">{ listaMusic[0]?.artistName }</p>
@@ -47,6 +48,7 @@ class Album extends React.Component {
             />
           )) }
       </>
+
     );
   }
 }

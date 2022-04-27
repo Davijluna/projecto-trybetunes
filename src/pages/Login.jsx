@@ -8,26 +8,20 @@ class Login extends React.Component {
     super();
     this.state = {
       nome: '',
-      // inputNome: '',
-      // botaoDisab: true,
       loading: false,
     };
-    // this.pegarDados = this.pegarDados.bind(this); // controlar dados
-    // this.isSaveButtonDesabled = this.isSaveButtonDesabled.bind(this);
-    // this.createUser = this.createUser.bind(this);
   }
 
-  // requisito 02.e
+  // requisito 02
   funcnova = (e) => {
-    // console.log(e.target);
     this.setState({
       nome: e.target.value,
     });
   }
 
+  // função que guarda os nomes exibindo carregando.
   funcClick = () => {
     const { history } = this.props;
-    // console.log(history);
     this.setState({
       loading: true,
     }, async () => {
@@ -36,36 +30,6 @@ class Login extends React.Component {
       history.push('/search');
     });
   }
-
-  // funcClick = async (event) => {
-  //   event.preventDefault();
-  //   const { name } = this.state;
-  //   this.setState({
-  //     loading: true,
-  //   });
-  //   await createUser({ name });
-  //   history.push('/search');
-  // };
-
-  // pegarDados({ target }) { // nesta parte foi desestruturado o event.target.
-  //   const { name, value } = target;
-  //   this.setState({
-  //     [name]: value, // foi chamada a chave [name] e o valor value
-  //     // inputNome: target.value,
-  //   }, this.isSaveButtonDesabled(value));
-  //   createUser({ name });
-  //   this.setState({ loading: true, pegarDados: true });
-  // }
-
-  // isSaveButtonDesabled(value) {
-  //   // const { inputNome } = this.state;
-  //   const MAX_NUMBER = 3;
-  //   if (value.length >= MAX_NUMBER) {
-  //     this.setState({ botaoDisab: false });
-  //   } else {
-  //     this.setState({ botaoDisab: true });
-  //   }
-  // }
 
   render() {
     const numberMax = 3;
@@ -87,8 +51,8 @@ class Login extends React.Component {
               <button
                 type="submit"
                 data-testid="login-submit-button"
-                onClick={ this.funcClick }
-                disabled={ nome.length < numberMax }
+                onClick={ this.funcClick } // no click aciona a função que guarda os nomes.
+                disabled={ nome.length < numberMax } // logica para abilitar e desabilitar botão.
               >
                 Entrar
               </button>
