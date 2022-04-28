@@ -3,7 +3,6 @@ import React from 'react';
 import Header from '../Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from './MusicCard';
-// import Loading from './Loading';
 
 class Album extends React.Component {
   constructor() {
@@ -32,11 +31,10 @@ class Album extends React.Component {
   render() {
     const { listaMusic } = this.state;
     return (
-      <>
+      <div data-testid="page-album">
         <Header />
-        <div data-testid="page-album" />
         <h1>Album</h1>
-        <div data-testid="page-album">
+        <div>
           <p data-testid="artist-name">{ listaMusic[0]?.artistName }</p>
           <p data-testid="album-name">{ listaMusic[0]?.collectionName}</p>
         </div>
@@ -47,7 +45,7 @@ class Album extends React.Component {
               song={ element }
             />
           )) }
-      </>
+      </div>
 
     );
   }
