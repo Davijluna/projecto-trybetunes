@@ -39,6 +39,7 @@ class MusicCard extends React.Component {
   };
 
   async musicaFavorita({ target }) {
+    console.log(musicaFavorita());
     const { song } = this.props;
     this.setState({
       loading: true,
