@@ -14,11 +14,13 @@ class Login extends React.Component {
 
   // requisito 02
   funcnova = (e) => {
+    // console.log('oi');
     this.setState({
       nome: e.target.value,
     });
   }
 
+  // Tive Ajuda de Rafael
   // função que guarda os nomes exibindo carregando.
   funcClick = () => {
     const { history } = this.props;

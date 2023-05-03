@@ -32,6 +32,7 @@ class MusicCard extends React.Component {
   //   const { favoritas } = this.state;
   //   return favoritas.find((som) => som.trackId === music.trackId);
   // }
+  // Tive ajuda de Andre e Guilherme
   isFavorite = (trackId) => {
     const { favorite } = this.state;
     const texte = favorite.some((element) => element.trackId === trackId);
